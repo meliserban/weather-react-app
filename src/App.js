@@ -2,6 +2,8 @@ import TopButton from "./components/TopButton";
 import Inputs from "./components/Inputs";
 import "./App.css";
 import UilReact from "@iconscout/react-unicons/icons/uil-react";
+import TimeLocation from "./components/TimeLocation";
+import Details from "./components/Details";
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
     >
       <TopButton />
       <Inputs />
+
+      <TimeLocation />
+      <Details />
     </div>
   );
 }
