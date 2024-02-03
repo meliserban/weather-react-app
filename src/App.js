@@ -4,6 +4,7 @@ import "./App.css";
 import UilReact from "@iconscout/react-unicons/icons/uil-react";
 import TimeLocation from "./components/TimeLocation";
 import Details from "./components/Details";
+import Forecast from "./components/Forecast";
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
     >
       <TopButton />
       <Inputs />
-
       <TimeLocation />
       <Details />
+      <Forecast title="hourly"/>
+      <Forecast title="daily"/>
+
     </div>
   );
 }
