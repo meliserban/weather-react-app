@@ -11,12 +11,19 @@ function Inputs({ setQuery, units, setUnits }) {
     }
   };
 
-  const handleLocationClick = () =>{
-    navigator.geolocation.getCurrentPosition((position) => {
-      setQuery({ lat: position.coords.latitude, lon: position.coords.longitude });
-    });
-  }
+  const handleUnitsChange = (e) => {
+    const selectedUnit = e.currentTarget.name;
+    if (units !== selectedUnit) setUnits(selectedUnit);
+  };
 
+  const handleLocationClick = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setQuery({
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+      });
+    });
+  };
 
   return (
     <div className="flex flex-row justify-center my-6 ">
@@ -43,6 +50,7 @@ function Inputs({ setQuery, units, setUnits }) {
 
       <div className="flex flex-row w-1/4 items-center justify-center">
         <button
+          onClick={handleUnitsChange}
           name="metric"
           className="text-xl text-white font-light hover:scale-125 transition ease-out"
         >
@@ -50,6 +58,7 @@ function Inputs({ setQuery, units, setUnits }) {
         </button>
         <p className=" text-xl text-white mx-1">|</p>
         <button
+          onClick={handleUnitsChange}
           name="imperial"
           className="text-xl text-white font-light hover:scale-125 transition ease-out"
         >
