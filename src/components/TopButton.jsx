@@ -8,7 +8,7 @@ export default function TopButton({setQuery}) {
     },
     {
       id: 2,
-      title: "Rome ",
+      title: "Milano ",
     },
     {
       id: 3,
