@@ -47,8 +47,8 @@ function App() {
         <div>
           <TimeLocation weather={weather}  />
           <Details weather={weather} />
-          <Forecast title="hourly" items={weather}/>
-          <Forecast title="daily" items={weather} />
+          <Forecast title="hourly" items={weather} daytime="12:00 PM" daytime2="1:00 PM" daytime3="2:00 PM"/>
+          <Forecast title="daily" items={weather} daytime="Tomorrow" daytime2="2/9" daytime3="2/10"/>
         </div>
       )}
     </div>

@@ -33,7 +33,7 @@ function Details({
     (temp_min = parseInt(temp_min)),
     (
       <div>
-        <div className="flex items-center justify-center py-6 text-xl text-cyan-200">
+        <div className=" flex items-center justify-center py-6 text-xl text-cyan-200">
           <p>{details}</p>
         </div>
         <div className="flex flex-row items-center mb-2 justify-between text-white py-3">
