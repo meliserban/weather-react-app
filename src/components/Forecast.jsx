@@ -1,5 +1,4 @@
 import React from "react";
-import Details from "./Details";
 import { iconUrlFromCode } from "../services/weatherService";
 
 function Forecast({ title, items, daytime, daytime2, daytime3}) {

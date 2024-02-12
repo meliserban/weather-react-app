@@ -1,13 +1,27 @@
 import { DateTime } from "luxon";
 
-const API_KEY = "9688c2d038ae2f5edd6e4e23fb6412fb";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
-const getWeatherData = (infoType, searchParams) => {
-  const url = new URL(BASE_URL + "/" + infoType);
-  url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
-  return fetch(url).then((res) => res.json());
+const getWeatherData = async (infoType, searchParams) => {
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+  const url = new URL(`${BASE_URL}/${infoType}`);
+  const params = new URLSearchParams({ ...searchParams, appid: apiKey });
+  url.search = params;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    throw error;
+  }
 };
+
+
 
 const formatCurrentWeather = (data) => {
   const {
